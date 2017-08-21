@@ -15,9 +15,14 @@ function collectModulesNames(moduleName, properties) {
 
     const modulesNames = Object.keys(property).reduce((memo, dependency) => {
       const pathToDepPackageJSON = `${directory}/node_modules/${dependency}/package.json`
-      const dependencyDeps = require(pathToDepPackageJSON).dependencies
-      const moduleVersion = dependencyDeps[moduleName]
+      const dependencyPackageJSON = require(pathToDepPackageJSON)
+      const dependencyDeps = dependencyPackageJSON.dependencies
 
+      if (!dependencyDeps) {
+        return memo
+      }
+
+      const moduleVersion = dependencyDeps[moduleName]
       return moduleVersion ? memo.concat(`${dependency} => ${moduleName}: ${moduleVersion}`) : memo
     }, [])
 
