@@ -1,0 +1,23 @@
+{
+  "name": "what-depends-on",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "what-depends-on": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/automate-routine/what-depends-on.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/automate-routine/what-depends-on/issues"
+  },
+  "homepage": "https://github.com/automate-routine/what-depends-on#readme"
+}
